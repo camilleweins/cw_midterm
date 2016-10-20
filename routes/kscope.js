@@ -14,9 +14,9 @@ router.get('/add', function(req, res) {
 	res.render('upload-pics');
 });
 
-router.get('./js', function(req, res) {
-	res.render('kaleidoscope');
-});
+// router.get('./js', function(req, res) {
+// 	res.render('kaleidoscope');
+// });
 
 router.get('/kscope', function(req, res) {
 	res.render('kscope');
