@@ -48,11 +48,16 @@ var moveDirectionY = 'positive';
     -------------------------------------------------------------------- */
 
 function setup() {
-  var imageList = ['/uploads/70507b21cd40dd7bec23ae20793417c6'];
+	
+  var imageList = [
+  {{#each imageFileNames}}
+  	"/uploads/{{this}}", 
+  	{{/each}}
+  ]
     createCanvas(windowWidth - 25, windowHeight - 85);
     
     kWidth = (windowWidth - 25);
-    kHeight = (windowHeight - 25);;
+    kHeight = (windowHeight - 25);
     widthSquares = (kWidth / displaySquareSize)  + 1;
     heightSquares = (kHeight / displaySquareSize) + 1;
   
@@ -273,21 +278,17 @@ function assembleTransform1(subImage,
     return resultImage;
 }
 
-/*  --------------------------------------------------------------------
-    
-    -------------------------------------------------------------------- */
+function mouseClicked() {
 
-// function mouseClicked() {
-
-//     if (displayPaused == true) {
-//         displayPaused = false;
-//         loop();
-//     }
-//     else {
-//         displayPaused = true;
-//         noLoop();
-//     }
-// }
+    if (displayPaused == true) {
+        displayPaused = false;
+        loop(imageList);
+    }
+    else {
+        displayPaused = true;
+        noLoop();
+    }
+}
 
 // function keyPressed() {
     
@@ -312,7 +313,6 @@ function assembleTransform1(subImage,
 //     displayPaused = false;
 //     loop();
 // }
-
 	  </script>
 
 </div>

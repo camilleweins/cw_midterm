@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var kSchema = new Schema({
-	imageFileName: String,
+	imageFileNames: [String],
 	dateCreated: {type: Date, default: Date.now},
 	speed: Number
 
