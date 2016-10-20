@@ -10,7 +10,7 @@ router.get('/', function (req, res) {
 	});
 });
 
-router.post('/kscope', function(req, res, next) {
+router.post('/schema', function(req, res, next) {
 	var kscope = new Kscope({
 		date: req.body.date,
 		speed: req.body.speed
@@ -33,6 +33,19 @@ router.post('/kscope', function(req, res, next) {
 			message: 'created new kscope',
 			kscope: data
 		});
+	});
+});
+
+router.get('/schema', function(req, res, next) {
+	Kscope.find({}, function(err, data) {
+		if (err) {
+			res.status(500);
+			return res.json({
+				status: 'error',
+				message: 'could not get images'
+			});
+		}
+		return res.json(data);
 	});
 });
 

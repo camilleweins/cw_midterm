@@ -14,9 +14,18 @@ router.get('/add', function(req, res) {
 	res.render('upload-pics');
 });
 
+router.get('/', function(req, res) {
+	res.render('nav-bar');
+});
+
+// router.get('/upload', function(req, res) {
+// 	res.render('upload-pics');
+// });
+
 router.post('/add', upload.single('image'), function(req, res) {
-	var kImage = new KImage({
-		amount: req.body.kImage,
+	var kImage = new K({
+		//amount: req.body.kImage,
+		dateCreated: req.body.date,
 		imageFileName: 'uploads/' + req.file.filename
 	});
 
@@ -24,21 +33,22 @@ router.post('/add', upload.single('image'), function(req, res) {
 		if (err) {
 			//300 is to redirect
 			//return res.sent('error!');
-			return res.redirect(303, '/image');
+			return res.redirect(303, '/kscope');
 		}
-		res.send('saved' + data.kImage);
+		res.send('saved');
+		//res.send('saved' + data.kImage);
 	});
 });
 
 //DO QUERY BUILDER FOR A GALLERY???
-router.get('/', function(req, res) {
-	Pet.find({}, function(err, data) {
-		var pageData = { //render pets view with page data
-			pets: data
-		};
-		res.render('pets', pets); //render an array of pets
+// router.get('/', function(req, res) {
+// 	Pet.find({}, function(err, data) {
+// 		var pageData = { //render pets view with page data
+// 			pets: data
+// 		};
+// 		res.render('pets', pets); //render an array of pets
 
-	}); //tell pet model to find pets that fit a criteria
-});
+// 	}); //tell pet model to find pets that fit a criteria
+// });
 
 module.exports = router;

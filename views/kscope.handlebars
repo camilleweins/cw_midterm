@@ -1,7 +1,9 @@
 {{#each kscope}}
 	<div class="kscope">
-		<h1>{{name}}</h1>
+		<h1>{{date}}</h1>
+		{{#if imageFileName}}
 		<img src="/uploads/{{imageFileName}}"> {{!-- display image file --}}
+		{{/if}}
 	</div>
 
 {{/each}}

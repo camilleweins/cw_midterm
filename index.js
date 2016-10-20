@@ -26,10 +26,10 @@ app.use(bodyParser.json());
 var api = require('./routes/api');
 app.use('/api', api);
 
-app.use('/api', require('./routes/api'));
+// app.use('/api', require('./routes/api'));
 
 var K = require('./routes/kscope');
-app.use('/api', api);
+app.use('/kscope', K);
 
 // app.get('/', function(req, res) {
 //   res.locals.title = 'Kaleidoscopes';
