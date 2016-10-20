@@ -28,6 +28,7 @@ app.use('/api', api);
 
 // app.use('/api', require('./routes/api'));
 
+//my main page
 var K = require('./routes/kscope');
 app.use('/kscope', K);
 

@@ -14,8 +14,20 @@ router.get('/add', function(req, res) {
 	res.render('upload-pics');
 });
 
-router.get('/', function(req, res) {
-	res.render('nav-bar');
+router.get('./js', function(req, res) {
+	res.render('kaleidoscope');
+});
+
+router.get('/kscope', function(req, res) {
+	res.render('kscope');
+});
+
+  // router.get('/', function(req, res) {
+  // 	res.render();
+  // });
+
+router.get('/gallery', function(req, res) {
+	res.render('image-gallery');
 });
 
 // router.get('/upload', function(req, res) {
