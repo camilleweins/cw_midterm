@@ -27,8 +27,19 @@ router.get('/kscope', function(req, res) {
   // });
 
 router.get('/gallery', function(req, res) {
-	res.render('image-gallery');
-});
+	//console.log(res.render(_id));
+	var query = {}
+	if (req.query.id) {
+		query = {id: req.query.id};
+	}
+	K.find(query, function(err, data) {
+		var pageData = {
+			kscopes: data
+		};
+		res.render('image-gallery', pageData);
+	});
+	
+});;
 
 // router.get('/upload', function(req, res) {
 // 	res.render('upload-pics');
@@ -62,7 +73,8 @@ router.post('/add', upload.array('image', 3), function(req, res) {
 			//return res.sent('error!');
 			return res.redirect(303, '/kscope');
 		}
-		res.send('saved');
+		res.redirect(200, '/:id');
+		//res.send('saved');
 		//res.send('saved' + data.kImage);
 	});
 });

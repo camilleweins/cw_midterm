@@ -282,7 +282,7 @@ function mouseClicked() {
 
     if (displayPaused == true) {
         displayPaused = false;
-        loop(imageList);
+        loop();
     }
     else {
         displayPaused = true;
@@ -290,29 +290,29 @@ function mouseClicked() {
     }
 }
 
-// function keyPressed() {
+function keyPressed() {
     
-//     noLoop();
-//     displayPaused = true
+    noLoop();
+    displayPaused = true;
     
-//     imageListIndex = imageListIndex + 1;
-//     if (imageListIndex > imageList.length - 1) {
-//         imageListIndex = 0;
-//     }
+    imageListIndex = imageListIndex + 1;
+    if (imageListIndex > imageList.length - 1) {
+        imageListIndex = 0;
+    }
     
-//     baseImageLoaded = false;
-//     baseImage = loadImage(imageList[imageListIndex], render);
+    baseImageLoaded = false;
+    baseImage = loadImage(imageList[imageListIndex], render);
     
-//     for (var a = 0; a < imageSliceData.length; a++) {
+    for (var a = 0; a < imageSliceData.length; a++) {
 
-//         var tile = imageSliceData[a];  
-//         tile.imageX = 0;
-//         tile.imageY = 0;
-//     }
+        var tile = imageSliceData[a];  
+        tile.imageX = 0;
+        tile.imageY = 0;
+    }
     
-//     displayPaused = false;
-//     loop();
-// }
+    displayPaused = false;
+    loop();
+}
 	  </script>
 
 </div>
