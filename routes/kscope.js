@@ -18,9 +18,9 @@ router.get('/add', function(req, res) {
 // 	res.render('kaleidoscope');
 // });
 
-router.get('/kscope', function(req, res) {
-	res.render('kscope');
-});
+// router.get('/kscope', function(req, res) {
+// 	res.render('kscope');
+// });
 
   // router.get('/', function(req, res) {
   // 	res.render();
@@ -82,23 +82,11 @@ router.post('/add', upload.array('image', 3), function(req, res) {
 router.get('/:id', function(req, res) {
 	console.log("hi");
 	K.findOne({'_id': req.params.id}, function(err, data) {
-
 		if (err) {
 			console.log(err);
 		}
 		return res.render('kscope', data);
 	});
 });
-
-//DO QUERY BUILDER FOR A GALLERY???
-// router.get('/', function(req, res) {
-// 	Pet.find({}, function(err, data) {
-// 		var pageData = { //render pets view with page data
-// 			pets: data
-// 		};
-// 		res.render('pets', pets); //render an array of pets
-
-// 	}); //tell pet model to find pets that fit a criteria
-// });
 
 module.exports = router;
