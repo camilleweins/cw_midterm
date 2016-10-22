@@ -4,9 +4,18 @@
 	{{#each kscopes}}
 	<div class="kscopes">
 	<h2>{{id}}</h2>
-		{{#if imageFileNames}}
-		<div class="image-container"><a href="./{{id}}"><img src="/uploads/{{imageFileNames}}"></a></div>		
-		{{/if}}
+		
+		<div class="image-container">
+			<a href="./{{id}}">
+				{{#each imageFileNames}}
+  				<img src="/uploads/{{this}}">
+  				{{/each}}
+				{{!-- {{#if imageFileNames}}
+				<img src="/uploads/{{this}}">
+				{{/if}} --}}
+			</a>
+		</div>		
+		
 	</div>
 {{/each}}
 

@@ -73,7 +73,7 @@ router.post('/add', upload.array('image', 3), function(req, res) {
 			//return res.sent('error!');
 			return res.redirect(303, '/kscope');
 		}
-		res.redirect(200, '/gallery');
+		res.redirect(200, './gallery');
 		//res.send('saved');
 		//res.send('saved' + data.kImage);
 	});
