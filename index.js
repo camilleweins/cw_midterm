@@ -4,6 +4,7 @@ var hbs = require('express-handlebars');
 var bodyParser = require('body-parser');
 
 var app = express();
+ var path = require('path');
 
 require('dotenv').config();
 
@@ -38,7 +39,8 @@ app.use('/kscope', K);
 //   res.render('main', myData);
 // });
 
-app.use( express.static('public') );
+
+ app.use(express.static(path.join(__dirname + '/public')) );
 
 // start server
 app.listen(portNum, function() {

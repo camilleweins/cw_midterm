@@ -54,7 +54,7 @@ router.post('/add', upload.array('image', 3), function(req, res) {
 
 	var kImage = new K({
 		//amount: req.body.kImage,
-		originalName: req.files.originalname,
+		//originalName: req.files.originalname,
 		dateCreated: req.body.date,
 		imageFileNames: fileNames
 
@@ -73,7 +73,8 @@ router.post('/add', upload.array('image', 3), function(req, res) {
 			//return res.sent('error!');
 			return res.redirect(303, '/kscope');
 		}
-		res.redirect(200, './gallery');
+		//res.render('image-gallery');
+		res.redirect('./gallery');
 		//res.send('saved');
 		//res.send('saved' + data.kImage);
 	});

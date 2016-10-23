@@ -1,5 +1,5 @@
 
-	<h1>A Kaleidoscope Gallery</h1>
+	<h1>User Submissions Gallery</h1>
 
 	{{#each kscopes}}
 	<div class="kscopes">
@@ -8,7 +8,7 @@
 		<div class="image-container">
 			<a href="./{{id}}">
 				{{#each imageFileNames}}
-  				<img src="/uploads/{{this}}">
+  				<div class="gallery"><img src="/uploads/{{this}}"></div>
   				{{/each}}
 				{{!-- {{#if imageFileNames}}
 				<img src="/uploads/{{this}}">

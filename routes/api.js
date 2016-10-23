@@ -13,7 +13,7 @@ router.get('/', function (req, res) {
 router.post('/schema', function(req, res, next) {
 	var kscope = new Kscope({
 		date: req.body.date,
-		speed: req.body.speed
+		//speed: req.body.speed
 
 	});
 

@@ -1,3 +1,53 @@
-body {
-	font-family: 'Roboto Mono'
+body{
+	font-family: 'Roboto Mono';
+}
+
+#nav-bar {
+	text-align: center;
+	background-color: white;
+	z-index: 1;
+	margin: 0;
+	/*padding: 0;*/
+	padding-top: 3vh;
+}
+
+#nav-bar li {
+	display: inline;
+	list-style-type: none;
+
+}
+
+#nav-bar li a:hover {
+	color: red;
+}
+
+#nav-bar a {
+	text-decoration: none;
+	display: inline-block;
+	padding: 3vw;
+	color: black;
+}
+
+h1 {
+	text-align: center;
+	padding-top: 3vh;
+}
+
+.gallery {
+	-webkit-box-flex: auto;
+	-ms-flex: auto;
+	display: flex;
+	width: 20vw;
+	margin: .5vw;
+	display: inline-block;
+}
+
+.gallery img {
+	position: relative;
+	height: auto;
+	width: 100%;
+}
+
+form {
+	text-align: center;
 }
