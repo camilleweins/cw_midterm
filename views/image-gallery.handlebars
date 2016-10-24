@@ -3,17 +3,17 @@
 
 	{{#each kscopes}}
 	<div class="kscopes">
-	<h2>{{id}}</h2>
+	<h2><a href="./{{id}}">{{id}}</a></h2>
 		
 		<div class="image-container">
-			<a href="./{{id}}">
+			
 				{{#each imageFileNames}}
   				<div class="gallery"><img src="/uploads/{{this}}"></div>
   				{{/each}}
 				{{!-- {{#if imageFileNames}}
 				<img src="/uploads/{{this}}">
 				{{/if}} --}}
-			</a>
+			
 		</div>		
 		
 	</div>
