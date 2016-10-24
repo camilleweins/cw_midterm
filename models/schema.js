@@ -4,8 +4,6 @@ var Schema = mongoose.Schema;
 var kSchema = new Schema({
 	imageFileNames: [String],
 	dateCreated: {type: Date, default: Date.now},
-	speed: Number
-
 });
 
 var Kaleidoscope = mongoose.model('Kaleidoscope', kSchema);

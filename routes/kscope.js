@@ -26,20 +26,27 @@ router.get('/add', function(req, res) {
   // 	res.render();
   // });
 
+// router.get('/gallery', function(req, res) {
+// 	//console.log(res.render(_id));
+// 	K.find().sort('-_id').exec(function(err, data) {
+// 		res.render('image-gallery', data);
+// 	});
+// });  
+
 router.get('/gallery', function(req, res) {
 	//console.log(res.render(_id));
 	var query = {}
 	if (req.query.id) {
 		query = {id: req.query.id};
 	}
-	K.find(query, function(err, data) {
+	K.find(query).sort('-_id').exec(function(err, data) {
 		var pageData = {
 			kscopes: data
 		};
 		res.render('image-gallery', pageData);
 	});
 	
-});;
+});
 
 // router.get('/upload', function(req, res) {
 // 	res.render('upload-pics');
@@ -80,8 +87,10 @@ router.post('/add', upload.array('image', 3), function(req, res) {
 	});
 });
 
+//don't touch; this is for kaleidoscope
 router.get('/:id', function(req, res) {
 	console.log("hi");
+	//K.orders.findOne({'_id': req.params.id}, function(err, data)
 	K.findOne({'_id': req.params.id}, function(err, data) {
 		if (err) {
 			console.log(err);
