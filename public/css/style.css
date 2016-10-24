@@ -60,3 +60,35 @@ h2 a:hover {
 form {
 	text-align: center;
 }
+
+#top-button {
+	padding: 5px;
+	z-index: 5;
+	position: fixed;
+	bottom: 10vh;
+	right: 5vw;
+	background-color: white;
+	border-size: 1px;
+	border-style: solid;
+	border-color: black;
+
+}
+
+#top-button a{
+	text-decoration: none;
+	color: black;
+}
+
+/*#top-button:hover{
+	background-color: black;
+	text-decoration: none;
+	color: white;
+}*/
+#top-button:hover {
+	background-color: black;
+	
+}
+
+#top-button a:hover {
+	color: white;
+}
